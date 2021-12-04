@@ -1,0 +1,18 @@
+main {
+  display: grid;
+  grid-template-columns: lfr lfr;
+  grid-template-areas: "chat alerts";
+}
+
+section.chat{
+  grid-area: chat;
+}
+
+section.alerts {
+  grid-area: alerts;
+}
+
+.tab-btn.active {
+  background:blue;
+  color: white;
+}
