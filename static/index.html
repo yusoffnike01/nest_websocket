@@ -5,7 +5,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
-  <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
   <link href="https://unpkg.com/vue-simple-notify/dist/vue-simple-notify.min.css">
   <script src="/socket.io/socket.io.js"></script>
   <script src="https://unpkg.com/vue/dist/vue.js"></script>
@@ -24,12 +24,12 @@
         <button type="submit" @click.prevent="sendChatMessage()">Send</button>
       </form>
       <div class="tab-row">
-        <button class="tab-btn" :class="{ active: activeRoom=== 'general'}" @click="activeRoom = 'general'">General</button>
-        <button class="tab-btn" :class="{ active: activeRoom=== 'typescript'}" @click="activeRoom = 'typescript'">Typecsript</button>
-        <button class="tab-btn" :class="{ active: activeRoom=== 'nestjs'}" @click="nestjs = 'nestjs'">NestJS</button>
+        <button class="tab-btn" :class="{ active: activeRoom === 'general'}" @click="activeRoom = 'general'">General</button>
+        <button class="tab-btn" :class="{ active: activeRoom === 'typescript'}" @click="activeRoom = 'typescript'">Typecsript</button>
+        <button class="tab-btn" :class="{ active: activeRoom === 'nestjs'}" @click="nestjs = 'nestjs'">NestJS</button>
       </div>
       <div class= "tab-row">
-        Status:{{isMemberOfActiveRoom ? 'Joined': 'Not Joined'}} <button @click="toggleRoomMembership()">{{isMemberOfActiveRoom ? 'Leave': 'Join'}}</button>
+        Status:{{ isMemberOfActiveRoom ? 'Joined': 'Not Joined' }} <button @click="toggleRoomMembership()">{{ isMemberOfActiveRoom ? 'Leave': 'Join'}}</button>
       </div>
       <p>
         <ul>
@@ -88,6 +88,7 @@
 
        toggleRoomMembership()
        {
+         console.log('sasas');
         if(this.isMemberOfActiveRoom)
         {
           this.socket.chat.emit('leaveRoom', this.activeRoom);
